@@ -1,0 +1,54 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper]{geometry}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{booktabs}
+
+\usepackage[
+    colorlinks=true,
+    allcolors=black,
+    urlcolor=blue,
+]{hyperref}
+
+% \renewcommand{\thesection}{}
+% \renewcommand{\thesubsection}{}
+% \renewcommand{\thesubsubsection}{}
+% \renewcommand{\theparagraph}{}
+% \setlength{\parindent}{0pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+
+\begin{document}
+
+\section{Introduction}
+
+A manifold \({ M }\) with periodic end \({ X }\) is a Riemann manifold of the form \[
+    Z_{\infty} = Z \cup W_0 \cup W_1 \cup W_2 \cup \cdots\,,
+\] where \({ W_{k} }\) are isometric copies of the fundamental segment \({ W }\) obtained by cutting \({ X }\) open along an oriented connected submanifold \({ Y }\) and \({ Z }\) is a smooth compact manifold with boundary \({ Y }\). 
+
+The completion of the de Rham complex of \({ M }\) in the \({ L^{2} }\) norm using over the end a Riemann measure \({ dx }\) lifted from that on \({ X }\) is not Fredholm. To rectify this, we will use \({ L_{\delta}^{^2} }\) norms, which are the \({ L^{2} }\) norms on \({ M }\) with respect to the measure \({ e^{\delta f(x)}\: dx }\) over the end. Here \({ \delta }\) is a real number and \({ f : \tilde X \to \mathbb R }\) is a smooth function such that \({ f(\tau(x)) = f(x) + 1 }\) with respect to the covering translation \({ \tau : \tilde X \to \tilde X }\). We shall denote the \({ L_{\delta}^2 }\) completion of the de Rham complex on \({ M }\) by \({ \Omega_{\delta}^*(M) }\).
+
+\begin{theorem}
+    \label{thm:Omega_delta_is_Fredholm}
+    Let \({ M }\) be a smooth Riemannian manifold manifold with a periodic end modeled on \({ \tilde X }\), and suppose that \({ H_{*}(M; \mathbb C) }\) is finite-dimensional. Then \({ \Omega_{\delta}^*(M) }\) is Fredholm for all but finitely many \({ \delta }\) of the form \({ \delta = \ln \lvert \lambda \rvert }\), where \({ \lambda }\) is a root of the characteristic polynomial of \({ \tau_{*} : H_{*}(\tilde X; \mathbb C) \to H_{*}(\tilde X; \mathbb C) }\).
+\end{theorem}
+
+Given a manifold \({ M }\) as in the above theorem, the complex \({ \Omega_{\delta}^*(M) }\) has a well-defined index \({ \operatorname{ind}_{\delta}(M) }\). It is known that \({ \operatorname{ind}_{\delta}(M) }\) is an even or odd function of \({ \delta }\) according to whether \({ \dim M = n }\) is even or odd, and that \({ \operatorname{ind}_{\delta}(M) = (-1)^{n} \xi(M) }\) for sufficiently large \({ \delta > 0 }\).
+
+\begin{theorem}
+    Let \({ M }\) be as in Theorem~\ref{thm:Omega_delta_is_Fredholm}. Then \({ \operatorname{ind}_{\delta}(M) }\) is a piecewise constant function of \({ \delta }\) whose only jumps occur at \({ \delta = \ln \lvert \lambda \rvert }\), where \({ \lambda }\) is a root of the char\-ac\-ter\-is\-tic polynomial \({ A_{k}(t) }\) of \({ \tau_{*} : H_{k}(\tilde X; \mathbb C) \to H_{k}(\tilde X; \mathbb C) }\) for some \({ k \in [0 : n-1] }\). Every such \({ \lambda }\) contributes \({ (-1)^{k+1} }\) times its multiplicity as a root of \({ A_{k}(t) }\) to the jump.
+\end{theorem}
+
+\end{document}
