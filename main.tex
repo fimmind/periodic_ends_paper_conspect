@@ -28,7 +28,10 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
 
 \begin{document}
 
@@ -59,6 +62,10 @@ Given a manifold \({ M }\) as in the above theorem, the complex \({ \Omega_{\del
     Let \({ M }\) be as in Theorem~\ref{thm:Omega_delta_is_Fredholm}. Then \({ \operatorname{ind}_{\delta}(M) }\) is a piecewise constant function of \({ \delta }\) whose only jumps occur at \({ \delta = \ln \lvert \lambda \rvert }\), where \({ \lambda }\) is a root of the char\-ac\-ter\-is\-tic polynomial \({ A_{k}(t) }\) of \({ \tau_{*} : H_{k}(\tilde X; \mathbb C) \to H_{k}(\tilde X; \mathbb C) }\) for some \({ k \in [0 : n-1] }\). Every such \({ \lambda }\) contributes \({ (-1)^{k+1} }\) times its multiplicity as a root of \({ A_{k}(t) }\) to the jump.
 \end{theorem}
 
+To be precise, we have the formula \[
+    \operatorname{ind}_{\delta}(M) = (-1)^{n} \chi(M) + \sum (-1)^{k} \#\left\{ \lambda \mid A_{k}(\lambda) = 0\,, \lvert \lambda \rvert > e^{\delta} \right\}\,.
+\]
+
 \section{Finite Dimensionality}
 
 Let \({ M }\) be a smooth orientable manifold with a periodic end modeled on \({ \tilde X }\). It is stated that vanishing of \({ \chi(X) }\) is a necessary yet not sufficient condition for the vector space \({ H_{*}(M; \mathbb C) }\) to be finite dimensional. To obtain a sufficient condition, observe that the derivative \({ df }\) defines a closed \({ 1 }\)-form on \({ X }\) and let \({ \xi = [df] \in H^{1}(X; \mathbb C) }\) be its cohomology class\footnote{Recall that \({ f : \tilde X \to \mathbb R }\) denotes a smooth function such that \({ f(\tau(x)) = f(x) + 1 }\) with respect to the covering translation \({ \tau : \tilde X \to \tilde X }\).}. The cup product with \({ \xi }\) gives rise to the chain complex
@@ -68,9 +75,14 @@ Let \({ M }\) be a smooth orientable manifold with a periodic end modeled on \({
 \end{equation}
 
 \begin{proposition}
-    Suppose the chain complex~\ref{eq:the_cup_product_chain_complex} is exact. Then \({ H_{*}(M; \mathbb C) }\) is a finite-dimensional vector space for any smooth orientable manifold with periodic end modeled on \({ \tilde X }\).
+    Suppose the chain complex~(\ref{eq:the_cup_product_chain_complex}) is exact. Then \({ H_{*}(M; \mathbb C) }\) is a finite-dimensional vector space for any smooth orientable manifold with periodic end modeled on \({ \tilde X }\).
 \end{proposition}
 
+\section{Examples}
 
+\begin{example}
+\hyphenation{man-i-fold}
+A manifold wit product end is a smooth Riemannian manifold whose end is modeled on \({ \tilde X = \mathbb R \times Y }\), where \({ Y }\) is a closed Riemannian manifold. The metric on \({ \mathbb R \times Y }\) is presumed to be the product metric. The covering translation induces an identity map \({ \tau_{*} }\) on the homology of \({ \mathbb R \times Y }\). Since \({ \lambda = 1 }\) is the only root of the characteristic polynomial of \({ \tau_{*} }\), the complex \({ \Omega_{\delta}^{*}(M) }\) is Fredholm for all \({ \delta \neq 0 }\). Its index \({ \operatorname{ind}_{\delta}(M) }\) equals \({ \chi(M) }\) if the dimension of \({ M }\) is even, and \({ -\operatorname{sgn}\delta \cdot \chi(M) }\) if the dimension of \({ M }\) is odd. Note that the same is true for any manifold whose periodic end is modeled on \({ \tilde X }\) such that the characteristic polynomial of \({ \tau_{*} : H_{*}(\tilde X; \mathbb C) \to H_{*}(\tilde X; \mathbb C) }\) only has unitary roots.
+\end{example}
 
 \end{document}
