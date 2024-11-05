@@ -32,7 +32,15 @@
 
 \begin{document}
 
-\section{Introduction}
+\section{Motivation}
+
+If \({ M }\) is a smooth closed orientable manifold of dimension \({ n }\), then the de Rham complex of complex-valued differential forms on \({ M }\), \[
+    0 \to \Omega^{0}(M) \overset{d_0}{\to} \Omega^{1}(M) \overset{d_1}{\to} \Omega^2(M) \to \cdots \to \Omega^{n}(M) \to 0\,,
+\] is known to be Fredholm in a suitable \({ L^{2} }\) completion. This means that the images of \({ d_{k} }\) are closed and the vector spaces \({ \ker d_{k} / \operatorname{im} d_{k-1} }\) are finite-dimensional. The alternating sum of the dimensions of these spaces is called the index of the de Rham complex. The de Rham theorem states that \({ \ker d_{k} / \operatorname{im} d_{k-1} \cong H^{k}(M; \mathbb C) }\), implying that the above index equals \({ \chi(M) }\), the Euler characteristic of \({ M }\).
+
+The goal of the paper is to extend these results to manifolds periodic ends.
+
+\section{Periodic Manifolds}
 
 A manifold \({ M }\) with periodic end \({ X }\) is a Riemann manifold of the form \[
     Z_{\infty} = Z \cup W_0 \cup W_1 \cup W_2 \cup \cdots\,,
@@ -45,10 +53,24 @@ The completion of the de Rham complex of \({ M }\) in the \({ L^{2} }\) norm usi
     Let \({ M }\) be a smooth Riemannian manifold manifold with a periodic end modeled on \({ \tilde X }\), and suppose that \({ H_{*}(M; \mathbb C) }\) is finite-dimensional. Then \({ \Omega_{\delta}^*(M) }\) is Fredholm for all but finitely many \({ \delta }\) of the form \({ \delta = \ln \lvert \lambda \rvert }\), where \({ \lambda }\) is a root of the characteristic polynomial of \({ \tau_{*} : H_{*}(\tilde X; \mathbb C) \to H_{*}(\tilde X; \mathbb C) }\).
 \end{theorem}
 
-Given a manifold \({ M }\) as in the above theorem, the complex \({ \Omega_{\delta}^*(M) }\) has a well-defined index \({ \operatorname{ind}_{\delta}(M) }\). It is known that \({ \operatorname{ind}_{\delta}(M) }\) is an even or odd function of \({ \delta }\) according to whether \({ \dim M = n }\) is even or odd, and that \({ \operatorname{ind}_{\delta}(M) = (-1)^{n} \xi(M) }\) for sufficiently large \({ \delta > 0 }\).
+Given a manifold \({ M }\) as in the above theorem, the complex \({ \Omega_{\delta}^*(M) }\) has a well-defined index \({ \operatorname{ind}_{\delta}(M) }\). It is known, due to Miller, that \({ \operatorname{ind}_{\delta}(M) }\) is an even or odd function of \({ \delta }\) according to whether \({ \dim M = n }\) is even or odd, and that \({ \operatorname{ind}_{\delta}(M) = (-1)^{n} \chi(M) }\) for sufficiently large \({ \delta > 0 }\). The result of following theorem completes the calculation of the function \({ \operatorname{ind}_{\delta}(M) }\).
 
 \begin{theorem}
     Let \({ M }\) be as in Theorem~\ref{thm:Omega_delta_is_Fredholm}. Then \({ \operatorname{ind}_{\delta}(M) }\) is a piecewise constant function of \({ \delta }\) whose only jumps occur at \({ \delta = \ln \lvert \lambda \rvert }\), where \({ \lambda }\) is a root of the char\-ac\-ter\-is\-tic polynomial \({ A_{k}(t) }\) of \({ \tau_{*} : H_{k}(\tilde X; \mathbb C) \to H_{k}(\tilde X; \mathbb C) }\) for some \({ k \in [0 : n-1] }\). Every such \({ \lambda }\) contributes \({ (-1)^{k+1} }\) times its multiplicity as a root of \({ A_{k}(t) }\) to the jump.
 \end{theorem}
+
+\section{Finite Dimensionality}
+
+Let \({ M }\) be a smooth orientable manifold with a periodic end modeled on \({ \tilde X }\). It is stated that vanishing of \({ \chi(X) }\) is a necessary yet not sufficient condition for the vector space \({ H_{*}(M; \mathbb C) }\) to be finite dimensional. To obtain a sufficient condition, observe that the derivative \({ df }\) defines a closed \({ 1 }\)-form on \({ X }\) and let \({ \xi = [df] \in H^{1}(X; \mathbb C) }\) be its cohomology class\footnote{Recall that \({ f : \tilde X \to \mathbb R }\) denotes a smooth function such that \({ f(\tau(x)) = f(x) + 1 }\) with respect to the covering translation \({ \tau : \tilde X \to \tilde X }\).}. The cup product with \({ \xi }\) gives rise to the chain complex
+\begin{equation}
+    \label{eq:the_cup_product_chain_complex}
+    H^{0}(X; \mathbb C) \overset{\cup \xi}{\longrightarrow} H^{1}(X; \mathbb C) \overset{\cup \xi}{\longrightarrow} \cdots \overset{\cup \xi}{\longrightarrow} H^{n}(X; \mathbb C)\,.
+\end{equation}
+
+\begin{proposition}
+    Suppose the chain complex~\ref{eq:the_cup_product_chain_complex} is exact. Then \({ H_{*}(M; \mathbb C) }\) is a finite-dimensional vector space for any smooth orientable manifold with periodic end modeled on \({ \tilde X }\).
+\end{proposition}
+
+
 
 \end{document}
