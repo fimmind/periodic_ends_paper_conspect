@@ -1,9 +1,8 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage[a4paper]{geometry}
 
-\usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
+\usepackage[english]{babel}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -17,12 +16,6 @@
     allcolors=black,
     urlcolor=blue,
 ]{hyperref}
-
-% \renewcommand{\thesection}{}
-% \renewcommand{\thesubsection}{}
-% \renewcommand{\thesubsubsection}{}
-% \renewcommand{\theparagraph}{}
-% \setlength{\parindent}{0pt}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
@@ -38,14 +31,14 @@
 \section{Motivation}
 
 If \({ M }\) is a smooth closed orientable manifold of dimension \({ n }\), then the de Rham complex of complex-valued differential forms on \({ M }\), \[
-    0 \to \Omega^{0}(M) \overset{d_0}{\to} \Omega^{1}(M) \overset{d_1}{\to} \Omega^2(M) \to \cdots \to \Omega^{n}(M) \to 0\,,
+    0 \longrightarrow \Omega^{0}(M) \overset{d_0}{\longrightarrow} \Omega^{1}(M) \overset{d_1}{\longrightarrow} \Omega^2(M) \longrightarrow \cdots \longrightarrow \Omega^{n}(M) \longrightarrow 0\,,
 \] is known to be Fredholm in a suitable \({ L^{2} }\) completion. This means that the images of \({ d_{k} }\) are closed and the vector spaces \({ \ker d_{k} / \operatorname{im} d_{k-1} }\) are finite-dimensional. The alternating sum of the dimensions of these spaces is called the index of the de Rham complex. The de Rham theorem states that \({ \ker d_{k} / \operatorname{im} d_{k-1} \cong H^{k}(M; \mathbb C) }\), implying that the above index equals \({ \chi(M) }\), the Euler characteristic of \({ M }\).
 
 The goal of the paper is to extend these results to manifolds periodic ends.
 
 \section{Periodic Manifolds}
 
-A manifold \({ M }\) with periodic end \({ X }\) is a Riemann manifold of the form \[
+A manifold \({ M }\) with periodic end modeled on an infinite cyclic cover \({ \tilde X }\) of a compact manifold \({ X }\) associated with a primitive cohomology class \({ \gamma \in H^{1}(X;\mathbb Z) }\) is a Riemann manifold of the form \[
     Z_{\infty} = Z \cup W_0 \cup W_1 \cup W_2 \cup \cdots\,,
 \] where \({ W_{k} }\) are isometric copies of the fundamental segment \({ W }\) obtained by cutting \({ X }\) open along an oriented connected submanifold \({ Y }\) and \({ Z }\) is a smooth compact manifold with boundary \({ Y }\). 
 
@@ -62,8 +55,8 @@ Given a manifold \({ M }\) as in the above theorem, the complex \({ \Omega_{\del
     Let \({ M }\) be as in Theorem~\ref{thm:Omega_delta_is_Fredholm}. Then \({ \operatorname{ind}_{\delta}(M) }\) is a piecewise constant function of \({ \delta }\) whose only jumps occur at \({ \delta = \ln \lvert \lambda \rvert }\), where \({ \lambda }\) is a root of the char\-ac\-ter\-is\-tic polynomial \({ A_{k}(t) }\) of \({ \tau_{*} : H_{k}(\tilde X; \mathbb C) \to H_{k}(\tilde X; \mathbb C) }\) for some \({ k \in [0 : n-1] }\). Every such \({ \lambda }\) contributes \({ (-1)^{k+1} }\) times its multiplicity as a root of \({ A_{k}(t) }\) to the jump.
 \end{theorem}
 
-To be precise, we have the formula \[
-    \operatorname{ind}_{\delta}(M) = (-1)^{n} \chi(M) + \sum (-1)^{k} \#\left\{ \lambda \mid A_{k}(\lambda) = 0\,, \lvert \lambda \rvert > e^{\delta} \right\}\,.
+To be precise, we have a formula \[
+    \operatorname{ind}_{\delta}(M) = (-1)^{n} \chi(M) + \sum (-1)^{k} \ \#\!\left\{ \lambda \mid A_{k}(\lambda) = 0\,, \lvert \lambda \rvert > e^{\delta} \right\}\,.
 \]
 
 \section{Finite Dimensionality}
@@ -82,7 +75,8 @@ Let \({ M }\) be a smooth orientable manifold with a periodic end modeled on \({
 
 \begin{example}
 \hyphenation{man-i-fold}
-A manifold wit product end is a smooth Riemannian manifold whose end is modeled on \({ \tilde X = \mathbb R \times Y }\), where \({ Y }\) is a closed Riemannian manifold. The metric on \({ \mathbb R \times Y }\) is presumed to be the product metric. The covering translation induces an identity map \({ \tau_{*} }\) on the homology of \({ \mathbb R \times Y }\). Since \({ \lambda = 1 }\) is the only root of the characteristic polynomial of \({ \tau_{*} }\), the complex \({ \Omega_{\delta}^{*}(M) }\) is Fredholm for all \({ \delta \neq 0 }\). Its index \({ \operatorname{ind}_{\delta}(M) }\) equals \({ \chi(M) }\) if the dimension of \({ M }\) is even, and \({ -\operatorname{sgn}\delta \cdot \chi(M) }\) if the dimension of \({ M }\) is odd. Note that the same is true for any manifold whose periodic end is modeled on \({ \tilde X }\) such that the characteristic polynomial of \({ \tau_{*} : H_{*}(\tilde X; \mathbb C) \to H_{*}(\tilde X; \mathbb C) }\) only has unitary roots.
+A manifold with product end is a smooth Riemannian manifold whose end is modeled on \({ \tilde X = \mathbb R \times Y }\), where \({ Y }\) is a closed Riemannian manifold. The metric on \({ \mathbb R \times Y }\) is presumed to be the product metric. The covering translation induces an identity map \({ \tau_{*} }\) on the homology of \({ \mathbb R \times Y }\). Since \({ \lambda = 1 }\) is the only root of the characteristic polynomial of \({ \tau_{*} }\), the complex \({ \Omega_{\delta}^{*}(M) }\) is Fredholm for all \({ \delta \neq 0 }\). Its index \({ \operatorname{ind}_{\delta}(M) }\) equals \({ \chi(M) }\) if the dimension of \({ M }\) is even, and \({ -\operatorname{sgn}\delta \cdot \chi(M) }\) if the dimension of \({ M }\) is odd. Note that the same is true for any manifold whose periodic end is modeled on \({ \tilde X }\) such that the characteristic polynomial of \({ \tau_{*} : H_{*}(\tilde X; \mathbb C) \to H_{*}(\tilde X; \mathbb C) }\) only has unitary roots.
 \end{example}
+
 
 \end{document}
